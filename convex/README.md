@@ -1,90 +1,35 @@
-# Welcome to your Convex functions directory!
+# 🛋️ Mafroush
 
-Write your Convex functions here.
-See https://docs.convex.dev/functions for more.
+---
 
-A query function that takes two arguments looks like:
+## 📝 Introduction
 
-```ts
-// functions.js
-import { query } from "./_generated/server";
-import { v } from "convex/values";
+**Mafroush** is a modern and user-friendly e-commerce web application specialized in selling home furniture and decor. It allows users to browse, filter, and purchase products with an intuitive interface. It features a responsive design, fast interactions, secure authentication, and a smooth checkout process. This project is built with scalability and performance in mind using modern tools and best practices.
 
-export const myQueryFunction = query({
-  // Validators for arguments.
-  args: {
-    first: v.number(),
-    second: v.string(),
-  },
+## ⚙️ Tech Stack
 
-  // Function implementation.
-  handler: async (ctx, args) => {
-    // Read the database as many times as you need here.
-    // See https://docs.convex.dev/database/reading-data.
-    const documents = await ctx.db.query("tablename").collect();
+- **Frontend Framework:** React 19
+- **Type Checking:** TypeScript
+- **Styling:** Tailwind CSS 4
+- **Authentication:** Clerk
+- **State Management:** Zustand
+- **Form Handling:** React Hook Form + Zod
+- **Image Uploads:** ImageKit
+- **Lazy Loading:** `react-lazy-load-image-component`
+- **Database & Backend Functions:** Convex
+- **Routing:** React Router 7
+- **Animations & UI:** Radix UI, Lucide Icons, Motion
+- **Notifications:** Sonner
+- **Tooling:** Vite, ESLint, TypeScript, Tailwind Merge
 
-    // Arguments passed from the client are properties of the args object.
-    console.log(args.first, args.second);
+## 🚀 Features
 
-    // Write arbitrary JavaScript here: filter, aggregate, build derived data,
-    // remove non-public properties, or create new objects.
-    return documents;
-  },
-});
-```
-
-Using this query function in a React component looks like:
-
-```ts
-const data = useQuery(api.functions.myQueryFunction, {
-  first: 10,
-  second: "hello",
-});
-```
-
-A mutation function looks like:
-
-```ts
-// functions.js
-import { mutation } from "./_generated/server";
-import { v } from "convex/values";
-
-export const myMutationFunction = mutation({
-  // Validators for arguments.
-  args: {
-    first: v.string(),
-    second: v.string(),
-  },
-
-  // Function implementation.
-  handler: async (ctx, args) => {
-    // Insert or modify documents in the database here.
-    // Mutations can also read from the database like queries.
-    // See https://docs.convex.dev/database/writing-data.
-    const message = { body: args.first, author: args.second };
-    const id = await ctx.db.insert("messages", message);
-
-    // Optionally, return a value from your mutation.
-    return await ctx.db.get(id);
-  },
-});
-```
-
-Using this mutation function in a React component looks like:
-
-```ts
-const mutation = useMutation(api.functions.myMutationFunction);
-function handleButtonPress() {
-  // fire and forget, the most common way to use mutations
-  mutation({ first: "Hello!", second: "me" });
-  // OR
-  // use the result once the mutation has completed
-  mutation({ first: "Hello!", second: "me" }).then((result) =>
-    console.log(result),
-  );
-}
-```
-
-Use the Convex CLI to push your functions to a deployment. See everything
-the Convex CLI can do by running `npx convex -h` in your project root
-directory. To learn more, launch the docs with `npx convex docs`.
+- 🔐 **Authentication** with Clerk (Sign in / Sign up)
+- 🛒 **Shopping Cart** and Wishlist system
+- 📦 **Dynamic Products** listing from Convex backend
+- 🔍 **Filtering & Search** by category and price
+- 📱 **Responsive UI** for all screen sizes
+- 🖼️ **Optimized Image Uploads** via ImageKit
+- 🌐 **Routing & Navigation** with deep linking
+- 📢 **Real-time Notifications** using Sonner
+- 🧠 **Clean & Maintainable Codebase** using modern patterns
