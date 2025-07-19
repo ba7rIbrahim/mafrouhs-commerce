@@ -8,7 +8,7 @@ export const ImageKit = ({ src, alt, className, ...props }: IKImageProps) => {
   if (!urlEndpoint) {
     return (
       <LazyLoadImage
-        src={src}
+        src={src ?? ""}
         alt={alt}
         className={className}
         effect="blur"
@@ -19,7 +19,7 @@ export const ImageKit = ({ src, alt, className, ...props }: IKImageProps) => {
 
   return (
     <ImageKitProvider urlEndpoint={urlEndpoint}>
-      <Image src={src} alt={alt} className={className} {...props} />
+      <Image src={src ?? ""} alt={alt} className={className} {...props} />
     </ImageKitProvider>
   );
 };

@@ -63,7 +63,6 @@ export const CheckoutForm = () => {
                   type="radio"
                   className="w-5 h-5 cursor-pointer"
                   id="card"
-                  checked
                 />
                 <label
                   htmlFor="card"
