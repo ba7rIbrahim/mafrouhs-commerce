@@ -6,6 +6,12 @@
 
 **Mafroush** is a modern and user-friendly e-commerce web application specialized in selling home furniture and decor. It allows users to browse, filter, and purchase products with an intuitive interface. It features a responsive design, fast interactions, secure authentication, and a smooth checkout process. This project is built with scalability and performance in mind using modern tools and best practices.
 
+---
+
+## 🔗 Live Website
+
+[Visit the website](https://mafrouhs.vercel.app/)
+
 ## ⚙️ Tech Stack
 
 - **Frontend Framework:** React 19
