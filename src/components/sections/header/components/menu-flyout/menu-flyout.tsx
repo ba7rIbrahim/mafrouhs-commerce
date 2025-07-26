@@ -19,6 +19,10 @@ export const MenuFlyout = () => {
   const { isOpen, setIsOpen } = useFlyoutMenuStore();
   const { wishlist, isLoading } = useWishlist();
 
+  if(isSignedIn) {
+    console.log(user?.username);
+  }
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -82,13 +86,13 @@ export const MenuFlyout = () => {
                         <Link
                           to="/profile"
                           onClick={() => setIsOpen(false)}
-                          className="cursor-pointer hover:bg-gray-50 w-full"
+                          className="w-full cursor-pointer hover:bg-gray-50"
                         >
                           {isSignedIn ? (
                             <div className="flex gap-3">
                               <UserButton />
                               <p className="text-sm font-medium">
-                                {user?.fullName} <br />{" "}
+                                {user?.username} <br />{" "}
                                 {user?.primaryEmailAddress?.emailAddress}{" "}
                               </p>
                             </div>

@@ -6,7 +6,7 @@ import { Home } from "@/pages/home";
 import { SuspenseWrapper } from "@/components/common/suspense-wrapper";
 import { ProtectedRoute } from "@/components/common/protected-route";
 
-const Signup = lazy(() => import("@/pages/sing-up"));
+const Signup = lazy(() => import("@/pages/sign-up"));
 const Signin = lazy(() => import("@/pages/sign-in"));
 const NotFoundPage = lazy(() => import("@/pages/not-found-page"));
 const Products = lazy(() => import("@/pages/products"));
@@ -93,7 +93,7 @@ export const router = createBrowserRouter([
     ),
     children: [
       {
-        path: "/sign-in",
+        path: "/sign-in/*",
         element: (
           <SuspenseWrapper>
             <Signin />
@@ -101,7 +101,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/sign-up",
+        path: "/sign-up/*",
         element: (
           <SuspenseWrapper>
             <Signup />
